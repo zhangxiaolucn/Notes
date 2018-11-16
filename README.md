@@ -46,3 +46,25 @@ SwitchyOmega（SwitchySharp　升级版） https://switchyomega.com/
 
 	 -p：ssh服务端口
 
+## 其他软件使用代理
+
+1. 安装tsocks
+sudo apt-get install tsocks
+2. 配置tsocks
+ sudo vim /etc/tsocks.conf 
+ 
+ ```
+ local = 192.168.100.0/255.255.255.0
+server = 127.0.0.1
+server_type = 5 # SOCKS 服务版本
+server_port = 1080 #SOCKS 服务使用的端口
+ ```
+ 
+ 3. 连接ssh并监听后可以使用命令启动软件
+ 
+ tsocks 你的软件 &
+ 
+ tsocks firefox &
+ 
+ & 是后台运行的意思
+ 
